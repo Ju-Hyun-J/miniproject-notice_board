@@ -14,7 +14,8 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // 프론트엔드 도메인 허용
-        config.addAllowedOrigin("http://localhost:*");
+        // addAllowedOrigin 은 와일드카드 포트를 지원하지 않으므로 pattern 사용
+        config.addAllowedOriginPattern("http://localhost:*");
 
         // 허용할 HTTP 메서드
         config.addAllowedMethod("GET");
